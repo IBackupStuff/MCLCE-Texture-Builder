@@ -44,8 +44,6 @@ entry.start()
 ```
 
 Each setting has the following meanings:
-- `executedFromC`
-    - keep false if executing from backend. controls multithreading
 - `errorMode`
     - replace: attempts to build and replace textures which cannot be simply copied
     - error: places an error texture over textures which cannot be simply copied
@@ -55,9 +53,6 @@ Each setting has the following meanings:
 - `useComplexProcessing`
     - controls whether to use complex processing for certain textures
     - complex processing can result in excessively long (upwards of 8 minutes) processing times if used with large sizes (like x64 or greater)
-- `debug`
-    - enables all types of logging for debugging
-    - included for compadibilty with old versions of the frontend
 - `inputPath`
     - filepath to the textures to be translated
 - `inputPathType`
@@ -191,8 +186,3 @@ Libraries of data regarding game textures and how to translate them between vers
 *internal only* folder for building the project for the Frontend.
 #### resources/
 *internal only* files created while making image resources for the program.
-
-## Frontend Information
-The frontend barely works and is pretty much thrown together. It's super unorganized and I can't even remember what exactly it does. It takes input from the users, ensures certain settings can only be selected if other settings are right and then executes a process over the command line to the python_builder Entry_Program.exe to translate textures.
-
-The program is designed away from the frontend, where almost all functions are handled in the backend, meaning that anyone can develop their own frontend on top of the backend to make implementation of this program easier for custom frontends.
